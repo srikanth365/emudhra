@@ -1,6 +1,6 @@
 
 # Pulling the latest base image for ubuntu
-FROM docker.io/eaiesbhub/epr-jdk-tomcat:latest
+FROM eaiesbhub/epr-jdk-tomcat:latest
 MAINTAINER Sudheekar
 
 ARG USER_HOME=/root
