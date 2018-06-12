@@ -7,13 +7,22 @@ pipeline {
         disableConcurrentBuilds()
     }
 
-	 stages {
+    stages {
 
-	 stage("Build") {
+		stage("Test - Unit tests") {
+			steps { runUnittests() }
+		}
+
+        stage("Build") {
             steps { buildApp() }
 		}
-		
+
+        stage("Deploy - Dev") {
+            steps { deploy('dev') }
+		}
 	}
+}
+
 
 // steps
 def buildApp() {
@@ -23,6 +32,14 @@ def buildApp() {
 }
 	sh "docker ps -f name=${containerName} -q | xargs --no-run-if-empty docker stop"
 	sh "docker ps -a -f name=${containerName} -q | xargs -r docker rm"
-	sh "docker run -d -p ${port}:8080 --name ${containerName} emudhra/epragathi:${BUILD_NUMBER}"
+	sh "docker run -d -p ${port}:5000 --name ${containerName} emudhra/epragathi:${BUILD_NUMBER}"
 
 }
+
+
+
+
+
+
+
+
