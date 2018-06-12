@@ -17,7 +17,7 @@ pipeline {
 
 // steps
 def buildApp() {
-	dir ('/home/srikanth/emudhra' ) {
+	dir ('https://github.com/srikanth365/emudhra.git' ) {
 		def appImage = docker.build("emudhra/epragathi:${BUILD_NUMBER}")
 	}
 }
