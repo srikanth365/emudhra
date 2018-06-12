@@ -1,6 +1,6 @@
 
 # Pulling the latest base image for ubuntu
-FROM eaiesb/tomcat:latest
+FROM eaiesbhub/tomcat:latest
 MAINTAINER Sudheekar
 
 ARG USER_HOME=/root
