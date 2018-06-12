@@ -32,7 +32,7 @@ def buildApp() {
 }
 	sh "docker ps -f name=${containerName} -q | xargs --no-run-if-empty docker stop"
 	sh "docker ps -a -f name=${containerName} -q | xargs -r docker rm"
-	sh "docker run -d -p ${port}:5000 --name ${containerName} emudhra/epragathi:${BUILD_NUMBER}"
+	sh "docker run -d -p ${port}:8080 --name ${containerName} emudhra/epragathi:${BUILD_NUMBER}"
 
 }
 
