@@ -8,17 +8,9 @@ pipeline {
     }
 
     stages {
-
-		stage("Test - Unit tests") {
-			steps { runUnittests() }
-		}
-
+	    
         stage("Build") {
             steps { buildApp() }
-		}
-
-        stage("Deploy - Dev") {
-            steps { deploy('dev') }
 		}
 	}
 }
