@@ -34,7 +34,7 @@ def buildApp() {
 	sh "docker ps -a -f name=${containerName} -q | xargs -r docker rm"
 	sh "docker run -d -p ${port}:8080 --name ${containerName} emudhra/epragathi:${BUILD_NUMBER}"
 
-}
+
 
 
 
