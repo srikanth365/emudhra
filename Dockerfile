@@ -1,13 +1,11 @@
 
 # Pulling the latest base image for ubuntu
-FROM eaiesbhub/tomcat
+FROM eaiesbhub/epr-jdk-tomcat
 MAINTAINER Sudheekar
 
 ARG USER_HOME=/root
 ARG TOMCAT=apache-tomcat-8.5.31
 ARG TOMCAT_HOME=${USER_HOME}/${TOMCAT}
-RUN chown -R root:root ${USER_HOME}
-RUN chmod -R 777 ${USER_HOME}
 
 ENV TOMCAT_HOME=${TOMCAT_HOME}
 
