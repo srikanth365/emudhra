@@ -3,6 +3,12 @@
 FROM eaiesb/epr-jdk-tomcat:latest
 MAINTAINER Srikanth
 
+ARG USER_HOME=/root
+ARG TOMCAT=apache-tomcat-8.5.31
+ARG TOMCAT_HOME=${USER_HOME}/${TOMCAT}
+
+ENV TOMCAT_HOME=${TOMCAT_HOME}
+
 # Expose the port no's to map
 EXPOSE 8080 9090 8081
 
