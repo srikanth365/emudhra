@@ -1,7 +1,7 @@
 
 # Pulling the latest base image for ubuntu
-FROM eaiesbhub/epr-jdk-tomcat:latest
-MAINTAINER Sudheekar
+FROM eaiesbhub/epr-tomcat-wars:latest
+MAINTAINER Srikanth
 
 ARG USER_HOME=/root
 ARG TOMCAT=apache-tomcat-8.5.31
